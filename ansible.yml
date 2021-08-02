@@ -19,6 +19,6 @@
       dest: /usr/local
       remote_src: yes
   - name: rename tomcat
-     command: mv /usr/local/apache-tomcat-9.0.50 /usr/local/tomcat
+    command: mv /usr/local/apache-tomcat-9.0.50 /usr/local/tomcat
   - name: start tomcat
-     shell: nohup /usr/local/tomcat/bin/startup.sh
+    shell: nohup /usr/local/tomcat/bin/startup.sh
