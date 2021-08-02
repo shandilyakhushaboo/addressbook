@@ -4,9 +4,9 @@
   become: True
 
   tasks:
-  - name: install JDK 11
-    yum:
-      name: openjdk-11-jdk
+  - name: install JDK 1.8
+    amazon-linux-extras:
+      name: java-openjdk11
       state: present
 
   - name: add tomcat group
