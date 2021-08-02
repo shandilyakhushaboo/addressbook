@@ -1,11 +1,10 @@
 ---
-- name: install tomcat server
-  hosts: agents
-  become: true
+- hosts: agents
+  become: True
 
   tasks:
   - name: Install OpenJDK
-    apt:
+    yum:
       name: openjdk-11-jre-headless
 
   - name: download tomcat server packages
