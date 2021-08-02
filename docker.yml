@@ -3,8 +3,8 @@
 
   become: True
 
-tasks:
-- name: install Docker on Agent VM
-  yum:
-    name: docker
-    state: present
+  tasks:
+  - name: install Docker on Agent VM
+    yum:
+      name: docker
+      state: present
