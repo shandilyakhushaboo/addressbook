@@ -9,7 +9,7 @@
       name: java-1.8.0-openjdk
       state: present
       
-   - name: install tomcat
+  - name: install tomcat
     yum:
       name: tomcat
       state: present
