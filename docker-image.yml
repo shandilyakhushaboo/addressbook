@@ -10,6 +10,6 @@
       chdir: /jenkinsnode/addressbook
       
   - name: Run Docker image on Agent VM
-    shell: sudo docker run --name addressbookcontainer -publish 8081:8080 -itd addressbookimage:latest
+    shell: sudo docker run --name addresscontainer -itd --publish 8081:8080 addressbookimage:latest
     args:
       chdir: /jenkinsnode/addressbook
