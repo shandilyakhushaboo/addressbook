@@ -1,0 +1,2 @@
+[agents]
+3.15.177.212 ansible_user=ec2-user
