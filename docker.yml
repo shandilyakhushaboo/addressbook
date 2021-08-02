@@ -1,6 +1,7 @@
 ---
-hosts: agents
-become: True
+- hosts: agents
+
+  become: True
 
 tasks:
 - name: install Docker on Agent VM
