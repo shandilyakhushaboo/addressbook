@@ -1,0 +1,10 @@
+---
+- hosts: agents
+
+  become: True
+
+  tasks:
+  - name: Create Docker image on Agent VM
+    shell: sudo docker build --tag addressbookimage .
+    args:
+      chdir: /jenkinsnode/addressbook
