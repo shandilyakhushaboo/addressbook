@@ -10,6 +10,6 @@ RUN mvn -f /home/app/pom.xml clean install
 # Package stage
 #
 FROM tomcat
-COPY --from=build /home/app/target/ROOT.war /usr/local/tomcat/webapps/ROOT.war
+COPY --from=build /home/app/target/addressbook-2.0.war /usr/local/tomcat/webapps/ROOT.war
 CMD "catalina.sh" "run"
 EXPOSE 8080
