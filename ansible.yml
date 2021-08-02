@@ -1,5 +1,3 @@
-Github repo:
-
 ---
 - name: install tomcat server
   hosts: agents
