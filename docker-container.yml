@@ -1,0 +1,10 @@
+---
+- hosts: agents
+
+  become: True
+
+  tasks:
+  - name: Run Docker image on Agent VM
+    shell: sudo docker run --name addresscontainer -itd --publish 8081:8080 addressbookimage:latest
+    args:
+      chdir: /jenkinsnode/addressbook
