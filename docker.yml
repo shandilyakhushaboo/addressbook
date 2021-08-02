@@ -1,0 +1,8 @@
+---
+hosts: agents
+become: True
+
+- name: install Docker on Agent VM
+  yum:
+    name: docker
+    state: present
