@@ -9,7 +9,16 @@
       name: java-1.8.0-openjdk
       state: present
       
-  - name: install tomcat
-    yum:
-      name: tomcat
-      state: present
+  - name: download tomcat
+    get_url:
+      url: "https://mirrors.ae-online.de/apache/tomcat/tomcat-9/v9.0.50/bin/apache-tomcat-9.0.50.tar.gz"
+      dest: /usr/local
+  - name: extract tomcat
+    unarchive:
+      src: "usr/local/apache-tomcat-9.0.50.tar.gz"
+      dest: /usr/local
+      remote_src: yes
+  - name: rename tomcat
+     command: mv /usr/local/apache-tomcat-9.0.50 /usr/local/tomcat
+  - name: start tomcat
+     shell: nohup /usr/local/tomcat/bin/startup.sh
