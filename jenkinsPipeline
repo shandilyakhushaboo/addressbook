@@ -1,0 +1,20 @@
+pipeline{
+    agent any
+    stages{
+        stage('GIT Checkout'){
+            steps{
+                git 'https://github.com/shandilyakhushaboo/addressbook.git'
+            }
+        }
+        stage('Ansible - Create Docker image on Agent VM'){
+            steps{
+                ansiblePlaybook credentialsId: 'ssh-pvt-key', disableHostKeyChecking: true, installation: 'ansible', inventory: 'inventory.inv', playbook: 'docker-image.yml'
+            }
+        }
+        stage('Ansible - Run Docker image in a container on Agent VM'){
+            steps{
+                ansiblePlaybook credentialsId: 'ssh-pvt-key', disableHostKeyChecking: true, installation: 'ansible', inventory: 'inventory.inv', playbook: 'docker-container.yml'
+            }
+        }
+    }
+}
